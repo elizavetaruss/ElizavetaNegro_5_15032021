@@ -1,0 +1,42 @@
+body{
+  background-image: url("img/bg.png");
+  
+}
+
+
+#produits
+{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin: 10PX;
+
+}
+
+
+
+#ourson
+{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 30px;
+   width: 25%;
+   background: #f4f4f4;
+	border-radius: 15px;
+   object-fit: cover;
+   padding: 1%;
+    }
+
+
+    .teddies_size{
+      width: 90%;
+      border-radius: 15px 15px;
+
+       }
+
+       .jumbotron {
+         background-image: url("img/bienvenue.png");
+         background-size: cover;
+         height: 250Px;
+       }
