@@ -10,7 +10,6 @@ body{
    flex-wrap: wrap;
    justify-content: center;
    margin: 10PX;
-
 }
 
 
@@ -40,3 +39,38 @@ body{
          background-size: cover;
          height: 250Px;
        }
+
+
+       #formulaire{
+        display: flex;
+        justify-content: center;
+        }
+
+.formulaire{
+  display: flex;
+   flex-direction: column;
+   align-items:flex-start;
+   justify-content: center;
+   padding: 20px;
+   width: 50%;
+   background: #f4f4f4;
+	border-radius: 15px;
+ 
+  }
+
+  #produit_panier{
+    display: flex;
+    flex-direction: column;
+    margin: 10PX;
+ }
+
+  #panierTeddies{
+    display: flex;
+     flex-direction: row;
+    
+    }
+
+    .img_panier_teddies{
+      width: 100px;
+      border-radius: 15px 15px;
+    }
