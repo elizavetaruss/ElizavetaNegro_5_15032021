@@ -2,7 +2,6 @@
 
 let panier = JSON.parse(sessionStorage.getItem("monPanier"));
 console.log(panier);
-
 var prixTotal = panier.reduce(function(prev, cur){
     return prev + cur.price;
 }, 0);
@@ -32,28 +31,38 @@ let firstName = document.getElementById('firstname').value;
 
 var sendOrder = document.getElementById('validationPanier');
 sendOrder.addEventListener('click', function () {
-    const contact = {
-        firstName: 'Alice',
-        lastName: 'Caroll',
-        address: '56 rue Victor Hugo',
-        city:'Nice',
-        email:'alice.caroll@gmail.com',
+     const postData = {
+        contact: {},
+        products: [],
+      }
+    postData.contact = {
+      firstName: document.getElementById('firstname').value,
+      lastName: document.getElementById('secondname').value,
+      address: document.getElementById('address').value,
+      city: document.getElementById('city').value,
+      email: document.getElementById('email').value
     }
-    const products = ['232','4353', '342'];
-    const postData = {contact, products};
-    const post = JSON.stringify(postData);
+    for (x of panier) {
+        postData.products.push(x._id);
+      }
+    console.log(postData)
 
-    sessionStorage.setItem("data",post);
-    let sessionPrixTotal = sessionStorage.setItem('prix',prixTotal/100);
-    console.log(post);
+    sessionStorage.setItem("postData",postData);
+    sessionStorage.setItem('prix',prixTotal/100);
 
+    
+    
     fetch('http://localhost:3000/api/teddies/order', {
+
+        headers: {
+            "Content-Type": "application/json"
+        },
         method: "POST",
-        body: post,
-        headers: {"Content-type": "application/json"}
+        mode: 'no-cors',
+        body: JSON.stringify(postData)
       })
-      .then(response => response.json()) 
-      .then(json => console.log(json));
+      .then(response => response.json())
+      .then(response => console.log(response.orderId));
 
 });
 
