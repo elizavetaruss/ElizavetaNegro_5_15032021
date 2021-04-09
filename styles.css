@@ -13,7 +13,6 @@ body{
 }
 
 
-
 #ourson
 {
    display: flex;
@@ -37,7 +36,8 @@ body{
        .jumbotron {
          background-image: url("img/bienvenue.png");
          background-size: cover;
-         height: 250Px;
+         height: 250px;
+         background-position: center;
        }
 
 
@@ -46,6 +46,28 @@ body{
         background-size: cover;
         height: 250Px;
       }
+
+
+
+      #produit_bloc{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: #f4f4f4;
+        border-radius: 15px;
+        width: 70%;
+        margin: auto;
+        padding: 10PX;
+         }
+
+
+      .test{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        }
+
 
 
        #formulaire{
@@ -65,19 +87,56 @@ body{
  
   }
 
+
+  #bloc_panier{
+  background: #f4f4f4;
+margin: auto;
+  border-radius: 15px;
+
+}
+
   #produit_panier{
     display: flex;
-    flex-direction: column;
-    margin: 10PX;
- }
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-  #panierTeddies{
-    display: flex;
-     flex-direction: row;
-    
-    }
+ .img_panier_teddies{
+  display: flex;
+  width: 50%;
+}
 
-    .img_panier_teddies{
-      width: 100px;
-      border-radius: 15px 15px;
+#panierTeddies{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  padding: auto;
+  width: 25%;
+  background: #ffffff;
+ border-radius: 15px;
+   }
+
+.prixtotal{
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+   }
+
+  .erreur{
+   color: red;
+     }
+
+#message_commande{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 30PX;
+  width: 90%;
+  flex-wrap: wrap;
+  background: #f4f4f4;
+  border-radius: 15px;
+
     }

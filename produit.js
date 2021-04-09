@@ -19,16 +19,14 @@ fetch('http://localhost:3000/api/teddies/'+ id)
     console.log(data);
     let teddy = data;
     const divId = document.getElementById('product');
-    let div = document.createElement("div");
-    div.innerHTML = `<article id='ourson_produit'>
+    product.innerHTML = `<div class="test">
     <h4>${teddy.name}</h4>
-    <img class="teddies_size" src="${teddy.imageUrl}" alt="${teddy.name}">
+    <img class="teddies_size_product" src="${teddy.imageUrl}" alt="${teddy.name}">
     <p> ${teddy.description}</p>
     <p> Prix: ${teddy.price/100}€</p>
-    </article>`;
+    </div>
+    `;
    
-    divId.appendChild(div);
-
     teddy.colors.forEach(function (element, key) {
         document.getElementById('color')[key] = new Option(element, key);
     });

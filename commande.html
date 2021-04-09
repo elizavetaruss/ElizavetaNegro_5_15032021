@@ -16,28 +16,38 @@
     <div class="bg-light">
       <div class="container">
           
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="index.html">
-                <img src="img/logo.svg" width="150" class="d-inline-block align-top" alt=""></a>
-              <div class="collapse navbar-collapse" id="navbarText">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+              <img src="img/logo.svg" width="150" class="d-inline-block align-top" alt=""></a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
                     <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
                   </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="panier.html" class="nav-link"><img src="img/panier.svg" width="30" class="d-inline-block align-center" alt="">
-                    Panier</a></li>
+                  <li class="nav-item">
+                    <li><a href="panier.html" class="nav-link"><img src="img/panier.svg" width="30" class="d-inline-block align-center" alt="">
+                      Panier</a></li>
+                  </li>
                 </ul>
               </div>
-            </nav>
+          </nav>
       </div>
   </div>
 
 
   <div class="jumbotron bg"></div>
+
+  <div id="message_commande" class="container">
+        <h5>Merci <span id="firstname"></span> pour votre commande N° <span id="commande"></span> dans le montant total de <span id="prix"></span>€.</h3>
+        <a href ="index.html" class="btn btn-primary" role="button">Returner Page d'Accueil</a>
+    </div>
   
-    <script src="produit.js"></script>
+    <script src="commande.js"></script>
   
   
 

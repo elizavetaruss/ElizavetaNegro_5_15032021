@@ -16,57 +16,69 @@
     <div class="bg-light">
       <div class="container">
           
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="index.html">
-                <img src="img/logo.svg" width="150" class="d-inline-block align-top" alt=""></a>
-              <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
-                  </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#" class="nav-link"><img src="img/panier.svg" width="30" class="d-inline-block align-center" alt="">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="index.html">
+            <img src="img/logo.svg" width="150" class="d-inline-block align-top" alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Accueil<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <li><a href="panier.html" class="nav-link"><img src="img/panier.svg" width="30" class="d-inline-block align-center" alt="">
                     Panier</a></li>
-                </ul>
-              </div>
-            </nav>
+                </li>
+              </ul>
+            </div>
+        </nav>
       </div>
   </div>
 
 
   <div class="jumbotron"></div>
-
-  <div id="produit_panier"></div>
+  <div id="bloc_panier">
+    <div id="produit_panier"></div>
+    <div id="prixtotalpanier"></div>
+  </div>
   
   <form id="formulaire">
     <div class="form-row formulaire">
         <div class="form-group col-md-12">
             <label for="nom">Votre Prénom</label>
             <input type="text" class="form-control" id="firstname" placeholder="Alice">
+            <p id="erreurFirstname" class="erreur"></p>
         </div>
 
         <div class="form-group col-md-12">
             <label for="nom">Votre Nom</label>
             <input type="text" class="form-control" id="secondname" placeholder="Musso">
+            <p id="erreurLastname" class="erreur"></p>
         </div>
         
         <div class="form-group col-md-12">
             <label for="email">Votre mail</label>
             <input type="email" class="form-control" id="email" placeholder="alice.musso@gmail.com">
+            <p id="erreurEmail" class="erreur"></p>
         </div>
 
         <div class="form-group col-md-12">
             <label for="address">Votre Adresse</label>
             <input type="text" class="form-control" id="address" placeholder="56, rue Victor Hugo">
-        </div>
+            <p id="erreurAddress" class="erreur"></p>
+          </div>
         
         <div class="form-group col-md-12">
             <label for="city">Votre Ville</label>
             <input type="text" class="form-control" id="city" placeholder="Nice">
+            <p id="erreurCity" class="erreur"></p>
         </div>
 
-        <div class ="btn btn-primary col-md-3" id="validationPanier"> mon panier</div>
+        <div class ="btn btn-primary" id="validationPanier"> Valider ma commande</div>
     </div>
   </form>
   <script src="panier.js"></script>
