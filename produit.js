@@ -14,6 +14,7 @@ let id = parametres.get("id");
 console.log(id);
 
 fetch('http://localhost:3000/api/teddies/'+ id)
+
   .then(res => res.json())
   .then(data => {
     console.log(data);
@@ -24,12 +25,12 @@ fetch('http://localhost:3000/api/teddies/'+ id)
     <img class="teddies_size_product" src="${teddy.imageUrl}" alt="${teddy.name}">
     <p> ${teddy.description}</p>
     <p> Prix: ${teddy.price/100}€</p>
-    </div>
-    `;
+    </div>`;
    
     teddy.colors.forEach(function (element, key) {
         document.getElementById('color')[key] = new Option(element, key);
     });
+
 
     document.getElementById('btnCart');
     let button = btnCart;
@@ -40,11 +41,18 @@ fetch('http://localhost:3000/api/teddies/'+ id)
         panier.push(teddy);
         sessionStorage.setItem("monPanier", JSON.stringify(panier));
         location.reload();
+        });
+    
+
+    })
+    .catch(err => {
+        alert('Problème avec le serveur. Revenez plus tard');
     });
 
 
 
-});
+
+
 
 
 

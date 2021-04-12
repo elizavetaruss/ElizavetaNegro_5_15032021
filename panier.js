@@ -2,10 +2,18 @@
 
 let panier = JSON.parse(sessionStorage.getItem("monPanier"));
 console.log(panier);
-var prixTotal = panier.reduce(function(prev, cur){
-    return prev + cur.price;
-}, 0);
-console.log(prixTotal/100);
+try {
+  var prixTotal = panier.reduce(function(prev, cur){
+      return prev + cur.price;
+  }, 0);
+  console.log(prixTotal/100);
+}
+catch (err) {
+  alert('Panier vide.');
+  window.location = 'index.html';
+
+}
+
 
 
 
@@ -121,9 +129,18 @@ sendOrder.addEventListener('click', function () {
         body: JSON.stringify(postData)
       })
       .then(response => response.json())
-      .then(response => sessionStorage.setItem('orderId',response.orderId));
-      setTimeout(function(){ window.location = 'commande.html'; }, 1000);
+      .then(response => {
+        sessionStorage.setItem('orderId',response.orderId)
+        setTimeout(function(){ window.location = 'commande.html'; }, 1000);
+      })
+
+      .catch(err => {
+        alert('Problème avec le serveur. Revenez plus tard');
+      })
       
+      
+
+
 
 });
 

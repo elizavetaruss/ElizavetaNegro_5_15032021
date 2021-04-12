@@ -1,5 +1,3 @@
-
-
 fetch('http://localhost:3000/api/teddies')
   .then(res => res.json())
   .then(data => {
@@ -15,5 +13,7 @@ fetch('http://localhost:3000/api/teddies')
     })
     .join('');
     document.querySelector('#produits').insertAdjacentHTML ("afterbegin", html);
-
-})
+  })
+  .catch(err => {
+    alert('Problème avec le serveur. Revenez plus tard');
+  })
