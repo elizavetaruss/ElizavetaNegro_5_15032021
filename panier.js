@@ -1,4 +1,4 @@
-
+// prix total panier //
 
 let panier = JSON.parse(sessionStorage.getItem("monPanier"));
 console.log(panier);
@@ -11,11 +11,10 @@ try {
 catch (err) {
   alert('Panier vide.');
   window.location = 'index.html';
-
 }
 
 
-
+// display panier //
 
 const html = panier.map(teddy => {
     return `<article id="panierTeddies">
@@ -32,6 +31,7 @@ const html = panier.map(teddy => {
 const panierTotal = document.getElementById('prixtotalpanier');
 panierTotal.innerHTML = `<p class="prixtotal"> Prix total: ${prixTotal/100}€</p>`;
 
+// formulaire, REGEX //
 
 let firstName = document.getElementById('firstname').value;
 
@@ -117,7 +117,7 @@ sendOrder.addEventListener('click', function () {
     sessionStorage.setItem("postData",postData.contact.firstName);
     sessionStorage.setItem('prix',prixTotal/100);
 
-    
+    // send to the server //
     
     fetch('http://localhost:3000/api/teddies/order', {
 

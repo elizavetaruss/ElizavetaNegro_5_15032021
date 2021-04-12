@@ -1,17 +1,18 @@
 
 
-
 if (sessionStorage.getItem("monPanier")){
     console.log("panier existe");
-}else {
+}
+else {
     console.log("création du panier");
     let init = [];
     sessionStorage.setItem('monPanier', (JSON.stringify(init)));
- };
+};
 
 let parametres = new URLSearchParams(document.location.search);
 let id = parametres.get("id");
 console.log(id);
+
 
 fetch('http://localhost:3000/api/teddies/'+ id)
 
@@ -42,12 +43,10 @@ fetch('http://localhost:3000/api/teddies/'+ id)
         sessionStorage.setItem("monPanier", JSON.stringify(panier));
         location.reload();
         });
-    
-
     })
     .catch(err => {
-        alert('Problème avec le serveur. Revenez plus tard');
-    });
+    alert('Problème avec le serveur. Revenez plus tard');
+  });
 
 
 
